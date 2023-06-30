@@ -1,1 +1,621 @@
 
+from django.db import models
+from django.contrib.auth.models import User
+# Create your models here.
+from django.db import models
+
+
+class Allicdailyoutstanding(models.Model):
+    sla_heading = models.CharField(db_column='SLA HEADING', max_length=61, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    ic_name = models.CharField(db_column='IC NAME', max_length=250, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    pol_type = models.CharField(db_column='POL TYPE', max_length=200, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    from_date = models.CharField(db_column='FROM DATE', max_length=20, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    to_date = models.CharField(db_column='TO DATE', max_length=20, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    pol_no = models.CharField(db_column='POL NO', max_length=50, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    policy_start_date = models.DateTimeField(db_column='Policy Start Date', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    policy_end_date = models.DateTimeField(db_column='Policy End Date', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    dev = models.CharField(db_column='Dev', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    ins_name = models.CharField(db_column='INS NAME', max_length=2000, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    emp_name = models.CharField(db_column='Emp Name', max_length=100, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    emp_code = models.CharField(db_column='Emp Code', max_length=100, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    mdid = models.CharField(db_column='MDID', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    ip_name = models.CharField(db_column='IP NAME', max_length=1000, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    age = models.DecimalField(db_column='Age', max_digits=18, decimal_places=0, blank=True, null=True)  # Field name made lowercase.
+    sex = models.CharField(db_column='Sex', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    relation = models.CharField(db_column='Relation', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    sum_ins = models.DecimalField(db_column='Sum Ins', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    cbamt = models.DecimalField(db_column='CBAmt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    buffer_amount = models.DecimalField(db_column='Buffer Amount', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    ccn = models.CharField(db_column='CCN', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    hosp_name = models.CharField(db_column='HOSP NAME', max_length=2000, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    hosp_city = models.CharField(db_column='Hosp City', max_length=500, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    treatment_type = models.CharField(db_column='Treatment Type', max_length=1000, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    diagnosis = models.CharField(db_column='DIAGNOSIS', max_length=4000, blank=True, null=True)  # Field name made lowercase.
+    icd_code = models.CharField(db_column='ICD CODE', max_length=50, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    disease_category = models.CharField(db_column='Disease Category', max_length=4000, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    doa = models.DateTimeField(db_column='DOA', blank=True, null=True)  # Field name made lowercase.
+    dod = models.DateTimeField(db_column='DOD', blank=True, null=True)  # Field name made lowercase.
+    actual_lodgeamt = models.DecimalField(db_column='Actual Lodgeamt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    lodge_date = models.DateTimeField(db_column='Lodge Date', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    prs_date = models.DateTimeField(db_column='PRS Date', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    lodge_type = models.CharField(db_column='Lodge Type', max_length=50, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    actual_loss_type = models.CharField(db_column='Actual Loss Type', max_length=20, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    head = models.CharField(db_column='Head', max_length=500, blank=True, null=True)  # Field name made lowercase.
+    cl_remarks = models.CharField(db_column='CL REMARKS', max_length=2000, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    adrremark = models.CharField(db_column='ADRRemark', max_length=8000, blank=True, null=True)  # Field name made lowercase.
+    bsi1 = models.DecimalField(db_column='BSI1', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    liablity_reserve_amt = models.DecimalField(db_column='Liablity Reserve Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    first_intimation_date = models.DateTimeField(db_column='First Intimation Date', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    ic_claim_no = models.CharField(db_column='IC Claim No', max_length=500, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    ic_portal_remarks = models.CharField(db_column='IC Portal Remarks', max_length=5000, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    sub_head = models.CharField(db_column='Sub Head', max_length=1000, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    servicing_branch = models.CharField(db_column='Servicing Branch', max_length=1000, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    branch_received_date = models.DateTimeField(db_column='Branch Received Date', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    intimation_tat = models.IntegerField(db_column='Intimation TAT', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    last_document_received = models.DateTimeField(db_column='Last Document Received', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    last_document_received_tat = models.IntegerField(db_column='Last Document Received TAT', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    ic_name_ii = models.CharField(db_column='IC Name II', max_length=20, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    psu_pvt = models.CharField(db_column='PSU PVT', max_length=20, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    gipsa_kp = models.CharField(db_column='GIPSA KP', max_length=20, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    processing_team = models.CharField(db_column='Processing Team', max_length=500, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    provider_code = models.CharField(db_column='PROVIDER CODE', max_length=200, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    hosp_cat = models.CharField(db_column='Hosp Cat', max_length=50, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    no_of_beds = models.CharField(db_column='No of beds', max_length=50, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    claimsinwardnumber = models.CharField(max_length=30, blank=True, null=True)
+    sail_opd_type = models.CharField(db_column='SAIL OPD Type', max_length=100, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    intimation_tat_band = models.CharField(db_column='Intimation TAT Band', max_length=50, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    last_document_received_tat_band = models.CharField(db_column='Last Document Received TAT Band', max_length=50, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    ip_mobile = models.CharField(db_column='IP MOBILE', max_length=50, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    ip_email = models.CharField(db_column='IP Email', max_length=500, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    ip_mobile_enr = models.CharField(db_column='IP MOBILE Enr', max_length=500, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    ip_email_enr = models.CharField(db_column='IP Email Enr', max_length=5000, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    hosp_mobile = models.CharField(db_column='Hosp MOBILE', max_length=50, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    hosp_email = models.CharField(db_column='Hosp Email', max_length=500, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    agent_mobile_no = models.CharField(db_column='Agent Mobile No', max_length=500, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    agent_emailid = models.CharField(db_column='Agent Emailid', max_length=5000, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    agent_code = models.CharField(db_column='Agent Code', max_length=500, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    corp_retail = models.CharField(db_column='corp retail', max_length=10, blank=True, null=True)  # Field renamed to remove unsuitable characters.
+    policy_sub_type = models.CharField(db_column='Policy Sub Type', max_length=100, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    no_of_sms_send_to_client = models.IntegerField(db_column='No of SMS send to Client', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    message_details = models.TextField(db_column='message details', blank=True, null=True)  # Field renamed to remove unsuitable characters.
+    no_of_email_send_to_client = models.IntegerField(db_column='No of Email send to Client', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    cps_date = models.DateTimeField(db_column='CPS Date', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    email_details = models.TextField(db_column='Email Details', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    gen_date = models.DateTimeField(db_column='Gen_date')  # Field name made lowercase.
+    gmc_category = models.CharField(db_column='GMC_Category', max_length=25, blank=True, null=True)  # Field name made lowercase.
+    lodgedate_getdate_tat = models.IntegerField(db_column='LodgeDate_GetDate_TAT', blank=True, null=True)  # Field name made lowercase.
+    lodgedate_getdate_tat_band = models.CharField(db_column='LodgeDate_GetDate_TAT_Band', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    revised_servicing_branch = models.CharField(db_column='REVISED_SERVICING_BRANCH', max_length=1000, blank=True, null=True)  # Field name made lowercase.
+
+
+    class Meta:
+        managed = False
+        db_table = 'AllICDailyOutstanding'
+Allicdailyoutstanding.objects = Allicdailyoutstanding.objects.using('sla')
+
+
+
+class AllicSettledCasesOfYesterday(models.Model):
+    icname = models.CharField(db_column='ICName', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    pol_type = models.CharField(db_column='Pol_Type', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    policystartdate = models.DateTimeField(db_column='PolicyStartDate', blank=True, null=True)  # Field name made lowercase.
+    policyenddate = models.DateTimeField(db_column='PolicyEndDate', blank=True, null=True)  # Field name made lowercase.
+    insuredname = models.CharField(db_column='InsuredName', max_length=1000, blank=True, null=True)  # Field name made lowercase.
+    pol_no = models.CharField(db_column='POL_NO', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    mdid = models.CharField(db_column='MDID', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    ccn = models.CharField(db_column='CCN', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    ipname = models.CharField(max_length=1000, blank=True, null=True)
+    hosp_name = models.CharField(db_column='Hosp_Name', max_length=3000, blank=True, null=True)  # Field name made lowercase.
+    hosp_city = models.CharField(db_column='Hosp_City', max_length=1000, blank=True, null=True)  # Field name made lowercase.
+    doa = models.DateTimeField(db_column='DOA', blank=True, null=True)  # Field name made lowercase.
+    dod = models.DateTimeField(db_column='DOD', blank=True, null=True)  # Field name made lowercase.
+    lodgeamt = models.DecimalField(db_column='Lodgeamt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    lodgedate = models.DateTimeField(db_column='LodgeDate', blank=True, null=True)  # Field name made lowercase.
+    lodgetype = models.CharField(db_column='LodgeType', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    actuallosstype = models.CharField(db_column='ActualLossType', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    dedamt = models.DecimalField(db_column='DedAmt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    dis_amt = models.DecimalField(db_column='Dis_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    settledamt = models.DecimalField(db_column='SettledAmt', max_digits=18, decimal_places=0, blank=True, null=True)  # Field name made lowercase.
+    dd_no_field = models.CharField(db_column='DD No.', max_length=30, blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.
+    dd_date = models.DateTimeField(db_column='DD Date', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    head = models.CharField(db_column='Head', max_length=10)  # Field name made lowercase.
+    gen_date = models.DateTimeField(db_column='Gen_Date', blank=True, null=True)  # Field name made lowercase.
+    room_paid_amt = models.DecimalField(db_column='Room_Paid_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    room_bill_amt = models.DecimalField(db_column='Room_Bill_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    nursing_paid_amt = models.DecimalField(db_column='Nursing_Paid_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    nursing_bill_amt = models.DecimalField(db_column='Nursing_Bill_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    icu_paid_amt = models.DecimalField(db_column='ICU_Paid_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    icu_bill_amt = models.DecimalField(db_column='ICU_Bill_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    surgeon_fees_paid_amt = models.DecimalField(db_column='Surgeon_Fees_Paid_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    surgeon_fees_bill_amt = models.DecimalField(db_column='Surgeon_Fees_Bill_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    asst_surgeon_paid_amt = models.DecimalField(db_column='Asst_Surgeon_Paid_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    asst_surgeon_bill_amt = models.DecimalField(db_column='Asst_Surgeon_Bill_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    visit_charges_paid_amt = models.DecimalField(db_column='Visit_Charges_Paid_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    visit_charges_bill_amt = models.DecimalField(db_column='Visit_Charges_Bill_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    consultant_paid_amt = models.DecimalField(db_column='Consultant_Paid_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    consultant_bill_amt = models.DecimalField(db_column='Consultant_Bill_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    other_professional_fees_paid_amt = models.DecimalField(db_column='Other_PROFESSIONAL_FEES_Paid_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    other_professional_fees_bill_amt = models.DecimalField(db_column='Other_PROFESSIONAL_FEES_Bill_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    pharmacy_paid_amt = models.DecimalField(db_column='Pharmacy_Paid_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    pharmacy_bill_amt = models.DecimalField(db_column='Pharmacy_Bill_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    implants_paid_amt = models.DecimalField(db_column='Implants_Paid_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    implants_bill_amt = models.DecimalField(db_column='Implants_Bill_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    stent_paid_amt = models.DecimalField(db_column='Stent_Paid_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    stent_bill_amt = models.DecimalField(db_column='Stent_Bill_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    medical_consumables_other_than_phaymacy_paid_amt = models.DecimalField(db_column='MEDICAL_CONSUMABLES_Other_Than_Phaymacy_Paid_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    medical_consumables_other_than_phaymacy_bill_amt = models.DecimalField(db_column='MEDICAL_CONSUMABLES_Other_Than_Phaymacy_Bill_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    investigation_paid_amt = models.DecimalField(db_column='INVESTIGATION_Paid_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    investigation_bill_amt = models.DecimalField(db_column='INVESTIGATION_Bill_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    other_paid_amt = models.DecimalField(db_column='Other_Paid_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    other_bill_amt = models.DecimalField(db_column='Other_Bill_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    mis_previous_paid = models.BooleanField(db_column='MIS_Previous_Paid', blank=True, null=True)  # Field name made lowercase.
+    backdatedpaid = models.BooleanField(db_column='BackDatedPaid', blank=True, null=True)  # Field name made lowercase.
+    provider_code = models.CharField(db_column='Provider_Code', max_length=200, blank=True, null=True)  # Field name made lowercase.
+    hospital_status = models.CharField(db_column='Hospital_status', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    treatment_type = models.CharField(db_column='Treatment_type', max_length=5000, blank=True, null=True)  # Field name made lowercase.
+    icd_code = models.CharField(db_column='ICd_Code', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    secondary_treatment = models.CharField(db_column='Secondary_treatment', max_length=5000, blank=True, null=True)  # Field name made lowercase.
+    primary_diagnosis = models.CharField(db_column='Primary_diagnosis', max_length=5000, blank=True, null=True)  # Field name made lowercase.
+    utr_updatedate = models.DateTimeField(db_column='UTR_UpdateDate', blank=True, null=True)  # Field name made lowercase.
+    corp_retail = models.CharField(db_column='Corp_Retail', max_length=9, blank=True, null=True)  # Field name made lowercase.
+    psu_pvt = models.CharField(db_column='PSU_PVT', max_length=3)  # Field name made lowercase.
+    br_cd_dor = models.DateTimeField(db_column='Br_CD_DOR', blank=True, null=True)  # Field name made lowercase.
+    ho_cd_dor = models.DateTimeField(db_column='HO_CD_DOR', blank=True, null=True)  # Field name made lowercase.
+    last_document_received = models.DateTimeField(db_column='Last_Document_Received', blank=True, null=True)  # Field name made lowercase.
+    inwdt = models.DateTimeField(db_column='InwDt', blank=True, null=True)  # Field name made lowercase.
+    gmc_category = models.CharField(db_column='GMC_Category', max_length=3)  # Field name made lowercase.
+    cps_date = models.DateTimeField(db_column='CPS_Date', blank=True, null=True)  # Field name made lowercase.
+    prs_date = models.DateTimeField(db_column='PRS_Date', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'AllIC_Settled_Cases_Of_Yesterday'
+AllicSettledCasesOfYesterday.objects = AllicSettledCasesOfYesterday.objects.using('sla')
+
+
+
+
+class ClPaidDet2(models.Model):
+    tpacode = models.CharField(db_column='TPACode', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    sla_heading = models.CharField(db_column='SLA_Heading', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    fromdate = models.DateTimeField(db_column='FromDate', blank=True, null=True)  # Field name made lowercase.
+    todate = models.DateTimeField(db_column='ToDate', blank=True, null=True)  # Field name made lowercase.
+    icname = models.CharField(db_column='ICName', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    pol_type = models.CharField(db_column='Pol_Type', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    clienttype = models.CharField(db_column='ClientType', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    iocode = models.CharField(db_column='IOCode', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    pol_no = models.CharField(db_column='Pol_no', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    policystartdate = models.DateTimeField(db_column='PolicyStartDate', blank=True, null=True)  # Field name made lowercase.
+    policyenddate = models.DateTimeField(db_column='PolicyEndDate', blank=True, null=True)  # Field name made lowercase.
+    dev = models.CharField(db_column='DEV', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    insuredname = models.CharField(db_column='InsuredName', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    empname = models.CharField(db_column='EmpName', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    empcode = models.CharField(db_column='EmpCode', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    mdid = models.CharField(db_column='MDID', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    ipname = models.CharField(db_column='IPName', max_length=200, blank=True, null=True)  # Field name made lowercase.
+    age = models.DecimalField(db_column='Age', max_digits=18, decimal_places=0, blank=True, null=True)  # Field name made lowercase.
+    ageband = models.CharField(db_column='AgeBand', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    sex = models.CharField(db_column='Sex', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    relation = models.CharField(db_column='Relation', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    sumins = models.DecimalField(db_column='SumIns', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    cbamt = models.DecimalField(db_column='CBAmt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    ccn = models.CharField(db_column='CCN', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    hospitlname = models.CharField(db_column='HospitlName', max_length=500, blank=True, null=True)  # Field name made lowercase.
+    hospcity = models.CharField(db_column='HospCity', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    hospregno = models.CharField(db_column='HospRegNo', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    hospitalservicetaxno = models.CharField(db_column='HospitalServiceTaxNo', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    provider_code = models.CharField(db_column='Provider_code', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    treatmenttype = models.CharField(db_column='TreatmentType', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    pdig = models.CharField(db_column='Pdig', max_length=500, blank=True, null=True)  # Field name made lowercase.
+    icd = models.CharField(db_column='ICD', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    diseasecategory = models.CharField(db_column='DiseaseCategory', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    doa = models.DateTimeField(db_column='DOA', blank=True, null=True)  # Field name made lowercase.
+    dod = models.DateTimeField(db_column='DOD', blank=True, null=True)  # Field name made lowercase.
+    lodgeamt = models.DecimalField(db_column='LodgeAmt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    lodgeamountband = models.CharField(db_column='LodgeAmountBand', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    lodgedate = models.DateTimeField(db_column='LodgeDate', blank=True, null=True)  # Field name made lowercase.
+    brcddor = models.DateTimeField(db_column='BRCDDOR', blank=True, null=True)  # Field name made lowercase.
+    hocddor = models.DateTimeField(db_column='HOCDDOR', blank=True, null=True)  # Field name made lowercase.
+    lodgetype = models.CharField(db_column='LodgeType', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    actuallosstype = models.CharField(db_column='ActualLossType', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    dedamt = models.DecimalField(db_column='DedAmt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    stamt_ded = models.DecimalField(db_column='Stamt_ded', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    dis_amt = models.DecimalField(db_column='Dis_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    ded = models.CharField(db_column='DED', max_length=2000, blank=True, null=True)  # Field name made lowercase.
+    settledamt = models.DecimalField(db_column='SettledAmt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    tdsamt = models.DecimalField(db_column='TDSAmt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    chequeamt = models.DecimalField(db_column='ChequeAmt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    stamt = models.DecimalField(db_column='STamt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    liablityamt = models.DecimalField(db_column='LiablityAmt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    infaverof = models.CharField(db_column='InFaverOf', max_length=200, blank=True, null=True)  # Field name made lowercase.
+    cpsdate = models.DateTimeField(db_column='CPSDate', blank=True, null=True)  # Field name made lowercase.
+    prsdate = models.DateTimeField(db_column='PRSDate', blank=True, null=True)  # Field name made lowercase.
+    floatno = models.DecimalField(db_column='FloatNo', max_digits=18, decimal_places=0, blank=True, null=True)  # Field name made lowercase.
+    floatgendate = models.DateTimeField(db_column='FloatGenDate', blank=True, null=True)  # Field name made lowercase.
+    chequeno = models.CharField(db_column='ChequeNo', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    chequedate = models.DateTimeField(db_column='ChequeDate', blank=True, null=True)  # Field name made lowercase.
+    ddnumber = models.CharField(db_column='DDNumber', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    dd_date = models.DateTimeField(db_column='DD_Date', blank=True, null=True)  # Field name made lowercase.
+    dispatchdate = models.DateTimeField(db_column='DispatchDate', blank=True, null=True)  # Field name made lowercase.
+    minno = models.CharField(db_column='Minno', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    bsi = models.DecimalField(db_column='BSI', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    bsiafter = models.DecimalField(db_column='BSIAFTER', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    invdone = models.CharField(db_column='InvDone', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    opinion = models.CharField(db_column='Opinion', max_length=200, blank=True, null=True)  # Field name made lowercase.
+    inv_remark = models.CharField(db_column='Inv_Remark', max_length=500, blank=True, null=True)  # Field name made lowercase.
+    claimevent = models.CharField(db_column='CLAIMEVENT', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    billno = models.CharField(db_column='BillNo', max_length=5000, blank=True, null=True)  # Field name made lowercase.
+    billdate = models.CharField(db_column='BillDate', max_length=5000, blank=True, null=True)  # Field name made lowercase.
+    sertaxrno = models.CharField(db_column='SerTaxRNO', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    ro_code = models.CharField(db_column='Ro_Code', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    icd2 = models.CharField(db_column='ICD2', max_length=200, blank=True, null=True)  # Field name made lowercase.
+    icd3 = models.CharField(db_column='ICD3', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    pdig2 = models.CharField(db_column='Pdig2', max_length=500, blank=True, null=True)  # Field name made lowercase.
+    pdig3 = models.CharField(db_column='Pdig3', max_length=500, blank=True, null=True)  # Field name made lowercase.
+    sec_treat = models.CharField(db_column='Sec_Treat', max_length=500, blank=True, null=True)  # Field name made lowercase.
+    pcs_code = models.CharField(db_column='PCS_Code', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    policy_plan_type = models.CharField(db_column='Policy_Plan_Type', max_length=500, blank=True, null=True)  # Field name made lowercase.
+    policy_sub_type = models.CharField(db_column='Policy_Sub_Type', max_length=500, blank=True, null=True)  # Field name made lowercase.
+    policy_scheme_type = models.CharField(db_column='Policy_Scheme_Type', max_length=500, blank=True, null=True)  # Field name made lowercase.
+    hospital_address = models.CharField(db_column='Hospital_Address', max_length=500, blank=True, null=True)  # Field name made lowercase.
+    buffer_amt = models.DecimalField(db_column='Buffer_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    pre_hosp_charges = models.DecimalField(db_column='Pre_Hosp_Charges', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    room_and_nursing_charges = models.DecimalField(db_column='Room_and_Nursing_Charges', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    investigation_charges = models.DecimalField(db_column='Investigation_Charges', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    medicine_charges = models.DecimalField(db_column='Medicine_Charges', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    miscellaneous_charges = models.DecimalField(db_column='Miscellaneous_Charges', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    surgery_charges = models.DecimalField(db_column='Surgery_Charges', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    consultation_charges = models.DecimalField(db_column='Consultation_Charges', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    post_hosp_charges = models.DecimalField(db_column='Post_Hosp_Charges', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    main_hosp_charges = models.DecimalField(db_column='Main_Hosp_Charges', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    pre_hosp_bill_no = models.CharField(db_column='Pre_Hosp_Bill_No', max_length=5000, blank=True, null=True)  # Field name made lowercase.
+    pre_hosp_bill_date = models.CharField(db_column='Pre_Hosp_Bill_Date', max_length=5000, blank=True, null=True)  # Field name made lowercase.
+    post_hosp_bill_no = models.CharField(db_column='Post_Hosp_Bill_No', max_length=5000, blank=True, null=True)  # Field name made lowercase.
+    post_hosp_bill_date = models.CharField(db_column='Post_Hosp_Bill_Date', max_length=5000, blank=True, null=True)  # Field name made lowercase.
+    main_hosp_bill_no = models.CharField(db_column='Main_Hosp_Bill_No', max_length=5000, blank=True, null=True)  # Field name made lowercase.
+    main_hosp_bill_date = models.CharField(db_column='Main_Hosp_Bill_Date', max_length=5000, blank=True, null=True)  # Field name made lowercase.
+    hosp_pin = models.CharField(db_column='Hosp_Pin', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    tac_tran_id = models.CharField(db_column='TAC_Tran_ID', max_length=25, blank=True, null=True)  # Field name made lowercase.
+    co_payment_percenrage = models.DecimalField(db_column='Co_Payment_Percenrage', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    co_payment_amt = models.DecimalField(db_column='Co_Payment_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    icr_plan_type = models.CharField(db_column='ICR_Plan_Type', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    recordid = models.IntegerField(db_column='Recordid')  # Field name made lowercase.
+    consider_in_icr_unique_count = models.IntegerField(db_column='Consider_In_ICR_Unique_Count', blank=True, null=True)  # Field name made lowercase.
+    pcsprocedure_1 = models.CharField(db_column='PCSProcedure_1', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    pcsprocedure_2 = models.CharField(db_column='PCSProcedure_2', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    pcsprocedure_3 = models.CharField(db_column='PCSProcedure_3', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    first_intimation_date = models.DateTimeField(db_column='First_Intimation_Date', blank=True, null=True)  # Field name made lowercase.
+    inlias_id = models.CharField(db_column='Inlias_ID', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    insured_name = models.CharField(db_column='INSURED_NAME', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    updated_treatment_type = models.CharField(db_column='UPDATED_TREATMENT_TYPE', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    age_band_rev = models.CharField(db_column='AGE_BAND_REV', max_length=20, blank=True, null=True)  # Field name made lowercase.
+    state_of_treatment = models.CharField(db_column='STATE_OF_TREATMENT', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    qtr_of_treatment = models.CharField(db_column='QTR_OF_TREATMENT', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    yr_of_treatment = models.CharField(db_column='YR_OF_TREATMENT', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    month_of_treatment = models.CharField(db_column='MONTH_OF_TREATMENT', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    new_disease_category = models.CharField(db_column='NEW_DISEASE_CATEGORY', max_length=1000, blank=True, null=True)  # Field name made lowercase.
+    los = models.IntegerField(db_column='LOS', blank=True, null=True)  # Field name made lowercase.
+    month_name = models.CharField(db_column='MONTH_NAME', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    year1 = models.CharField(db_column='YEAR1', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    sla_report_year = models.CharField(db_column='SLA_REPORT_YEAR', max_length=20, blank=True, null=True)  # Field name made lowercase.
+    ccn_lt = models.CharField(db_column='CCN_LT', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    is_reconsidered_conca_ref = models.CharField(db_column='IS_RECONSIDERED_CONCA_REF', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    status = models.CharField(db_column='Status', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    covid_non_covid = models.CharField(db_column='COVID_NON_COVID', max_length=20, blank=True, null=True)  # Field name made lowercase.
+    claim_type = models.CharField(db_column='CLAIM_TYPE', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    consider_count = models.IntegerField(db_column='CONSIDER_COUNT', blank=True, null=True)  # Field name made lowercase.
+    is_it_reconsidered = models.CharField(db_column='IS_IT_RECONSIDERED', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    settlement_date = models.DateField(db_column='SETTLEMENT_DATE', blank=True, null=True)  # Field name made lowercase.
+    jsm = models.DateTimeField(db_column='JSM', blank=True, null=True)  # Field name made lowercase.
+    jem = models.DateTimeField(db_column='JEM', blank=True, null=True)  # Field name made lowercase.
+    ro_code_updated = models.CharField(db_column='RO_Code_Updated', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    ro_name = models.CharField(db_column='RO_Name', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    sla_heading_updated = models.CharField(db_column='SLA_HEADING_UPDATED', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    month_no = models.CharField(db_column='MONTH_NO', max_length=5, blank=True, null=True)  # Field name made lowercase.
+    paid_ccn = models.CharField(db_column='Paid_CCN', max_length=500, blank=True, null=True)  # Field name made lowercase.
+    ro_name_updated = models.CharField(db_column='RO_Name_Updated', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    report_plan = models.CharField(db_column='Report_Plan', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    concat_plan_type = models.CharField(db_column='Concat_Plan_Type', max_length=500, blank=True, null=True)  # Field name made lowercase.
+    actual_lodge_amt = models.IntegerField(db_column='Actual_Lodge_Amt', blank=True, null=True)  # Field name made lowercase.
+    ipd_opd = models.CharField(db_column='IPD_OPD', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    ccn_lodge_type_lodge_date_lodgeamt = models.CharField(db_column='CCN_Lodge_Type_Lodge_Date_LodgeAmt', max_length=200, blank=True, null=True)  # Field name made lowercase.
+    lodge_amount_count = models.IntegerField(db_column='Lodge_Amount_Count', blank=True, null=True)  # Field name made lowercase.
+    dedloge = models.CharField(max_length=200, blank=True, null=True)
+    lodge_lodgeamt = models.CharField(db_column='Lodge_LodgeAmt', max_length=200, blank=True, null=True)  # Field name made lowercase.
+    lodge_deduction = models.CharField(db_column='Lodge_Deduction', max_length=200, blank=True, null=True)  # Field name made lowercase.
+    deductionspaidamt = models.IntegerField(db_column='DeductionspaidAmt', blank=True, null=True)  # Field name made lowercase.
+    deductionsrepeat = models.IntegerField(db_column='DeductionsRepeat', blank=True, null=True)  # Field name made lowercase.
+    actualdeductionsdeductionslodge = models.IntegerField(db_column='ActualDeductionsDeductionslodge', blank=True, null=True)  # Field name made lowercase.
+    mdidliabilityamt = models.IntegerField(db_column='MDIDliabilityAmt', blank=True, null=True)  # Field name made lowercase.
+    mdidrepeat = models.IntegerField(db_column='MDIDRepeat', blank=True, null=True)  # Field name made lowercase.
+    agesi_utilized = models.DecimalField(db_column='ageSI_Utilized', max_digits=8, decimal_places=2, blank=True, null=True)  # Field name made lowercase.
+    utilizationband = models.CharField(db_column='UtilizationBand', max_length=20, blank=True, null=True)  # Field name made lowercase.
+    amount_band = models.CharField(db_column='Amount_Band', max_length=20, blank=True, null=True)  # Field name made lowercase.
+    feedback_date = models.DateTimeField(db_column='Feedback_Date', blank=True, null=True)  # Field name made lowercase.
+    fb_appointment_booking = models.IntegerField(db_column='FB_Appointment_Booking', blank=True, null=True)  # Field name made lowercase.
+    fb_time_by_doctor = models.IntegerField(db_column='FB_Time_By_Doctor', blank=True, null=True)  # Field name made lowercase.
+    fb_staff_professionalism = models.IntegerField(db_column='FB_Staff_Professionalism', blank=True, null=True)  # Field name made lowercase.
+    fb_hospital_hygiene = models.IntegerField(db_column='FB_Hospital_Hygiene', blank=True, null=True)  # Field name made lowercase.
+    fb_medical_care = models.IntegerField(db_column='FB_Medical_Care', blank=True, null=True)  # Field name made lowercase.
+    fb_pre_auth_process = models.IntegerField(db_column='FB_Pre_Auth_Process', blank=True, null=True)  # Field name made lowercase.
+    fb_discharge_process = models.IntegerField(db_column='FB_Discharge_Process', blank=True, null=True)  # Field name made lowercase.
+    end_to_end_tat = models.IntegerField(db_column='End to End TAT', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    payment_tat = models.IntegerField(db_column='Payment_TAT', blank=True, null=True)  # Field name made lowercase.
+    adr_send_date = models.DateTimeField(db_column='ADR_Send_Date', blank=True, null=True)  # Field name made lowercase.
+    adr_recd_date = models.DateTimeField(db_column='ADR_Recd_Date', blank=True, null=True)  # Field name made lowercase.
+    file_closure_dates = models.DateTimeField(db_column='File_Closure_Dates', blank=True, null=True)  # Field name made lowercase.
+    last_document_received_date = models.DateTimeField(db_column='Last_Document_Received_Date', blank=True, null=True)  # Field name made lowercase.
+    actual_tat = models.IntegerField(db_column='Actual_TAT', blank=True, null=True)  # Field name made lowercase.
+    final_processing_tat_settlment_tat = models.IntegerField(db_column='Final_Processing_TAT / Settlment_TAT', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    claim_lodge_date_doa = models.IntegerField(db_column='Claim Lodge Date - DOA', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    claim_document_received_date_dod = models.IntegerField(db_column='Claim Document Received Date - DOD', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    adr_raise_date_lodge_date = models.IntegerField(db_column='ADR Raise Date - Lodge Date', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    adr_recive_adr_raise_date = models.IntegerField(db_column='ADR Recive - ADR Raise Date', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    claim_lodge_date_dod = models.IntegerField(db_column='Claim Lodge Date - DOD', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    broker_name = models.CharField(db_column='Broker_Name', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    inital_tat = models.IntegerField(db_column='INITAL TAT', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    tag = models.CharField(db_column='Tag', max_length=20, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'CL_PAID_DET2'
+
+
+ClPaidDet2.objects = ClPaidDet2.objects.using('sla')
+
+
+class ClCrsDet2(models.Model):
+    sla_no = models.DecimalField(db_column='SLA_NO', max_digits=18, decimal_places=0, blank=True, null=True)  # Field name made lowercase.
+    sla_heading = models.CharField(db_column='SLA_HEADING', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    ic_name = models.CharField(db_column='IC_NAME', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    pol_type = models.CharField(db_column='POL_TYPE', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    ro_code = models.CharField(db_column='RO_CODE', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    ro_name = models.CharField(db_column='RO_NAME', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    from_date = models.DateTimeField(db_column='FROM_DATE', blank=True, null=True)  # Field name made lowercase.
+    to_date = models.DateTimeField(db_column='TO_DATE', blank=True, null=True)  # Field name made lowercase.
+    uo_code = models.CharField(db_column='UO_CODE', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    uo_name = models.CharField(db_column='UO_NAME', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    pol_no = models.CharField(db_column='POL_NO', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    dev = models.CharField(db_column='Dev', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    age = models.CharField(db_column='Age', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    sex = models.CharField(db_column='Sex', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    sumins = models.DecimalField(db_column='SumIns', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    cbamt = models.DecimalField(db_column='CBAmt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    ins_name = models.CharField(db_column='INS_NAME', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    mdid = models.CharField(db_column='MDID', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    ccn = models.CharField(db_column='CCN', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    ip_name = models.CharField(db_column='IP_NAME', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    hosp_name = models.CharField(db_column='HOSP_NAME', max_length=500, blank=True, null=True)  # Field name made lowercase.
+    hosp_reg_no = models.CharField(db_column='HOSP_REG_NO', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    diagnosis = models.CharField(db_column='DIAGNOSIS', max_length=500, blank=True, null=True)  # Field name made lowercase.
+    icd_code = models.CharField(db_column='ICD_CODE', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    doa = models.DateTimeField(db_column='DOA', blank=True, null=True)  # Field name made lowercase.
+    dod = models.DateTimeField(db_column='DOD', blank=True, null=True)  # Field name made lowercase.
+    cl_lod_amt = models.DecimalField(db_column='CL_LOD_AMT', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    crs_reasons = models.CharField(db_column='CRS_REASONS', max_length=8000, blank=True, null=True)  # Field name made lowercase.
+    user_name = models.CharField(db_column='USER_NAME', max_length=25, blank=True, null=True)  # Field name made lowercase.
+    lodgetype = models.CharField(db_column='LodgeType', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    hosp_city = models.CharField(db_column='Hosp_City', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    lodgedate = models.DateTimeField(db_column='LodgeDate', blank=True, null=True)  # Field name made lowercase.
+    ageband = models.CharField(db_column='AgeBand', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    extra = models.CharField(db_column='Extra', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    actuallosstype = models.CharField(db_column='ActualLossType', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    remark = models.CharField(db_column='Remark', max_length=500, blank=True, null=True)  # Field name made lowercase.
+    status = models.CharField(db_column='Status', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    diseasecategory = models.CharField(db_column='DiseaseCategory', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    lodgeamountband = models.CharField(db_column='LodgeAmountBand', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    treatmenttype = models.CharField(db_column='TreatmentType', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    policystartdate = models.DateTimeField(db_column='PolicyStartDate', blank=True, null=True)  # Field name made lowercase.
+    policyenddate = models.DateTimeField(db_column='PolicyEndDate', blank=True, null=True)  # Field name made lowercase.
+    tpacode = models.CharField(db_column='TPACode', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    brcddor = models.DateTimeField(db_column='BRCDDOR', blank=True, null=True)  # Field name made lowercase.
+    hocddor = models.DateTimeField(db_column='HOCDDOR', blank=True, null=True)  # Field name made lowercase.
+    servicingbranch = models.CharField(db_column='ServicingBranch', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    bsi = models.CharField(db_column='BSI', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    empname = models.CharField(db_column='Empname', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    empcode = models.CharField(db_column='Empcode', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    relation = models.CharField(db_column='Relation', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    clienttype = models.CharField(db_column='ClientType', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    invdone = models.CharField(db_column='InvDone', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    opinion = models.CharField(db_column='Opinion', max_length=500, blank=True, null=True)  # Field name made lowercase.
+    inv_remark = models.CharField(db_column='Inv_Remark', max_length=1000, blank=True, null=True)  # Field name made lowercase.
+    crsdate = models.DateTimeField(db_column='CRSDate', blank=True, null=True)  # Field name made lowercase.
+    hosp_pin = models.CharField(db_column='Hosp_Pin', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    substatus = models.CharField(db_column='SubStatus', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    tac_tran_id = models.CharField(db_column='TAC_Tran_ID', max_length=25, blank=True, null=True)  # Field name made lowercase.
+    icr_plan_type = models.CharField(db_column='ICR_Plan_Type', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    recordid = models.IntegerField(db_column='Recordid')  # Field name made lowercase.
+    consider_in_icr_unique_count = models.IntegerField(db_column='Consider_In_ICR_Unique_Count', blank=True, null=True)  # Field name made lowercase.
+    policy_plan_type = models.CharField(db_column='Policy_Plan_Type', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    policy_sub_type = models.CharField(db_column='Policy_Sub_Type', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    policy_scheme_type = models.CharField(db_column='Policy_Scheme_Type', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    pcsprocedure_1 = models.CharField(db_column='PCSProcedure_1', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    pcsprocedure_2 = models.CharField(db_column='PCSProcedure_2', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    pcsprocedure_3 = models.CharField(db_column='PCSProcedure_3', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    first_intimation_date = models.DateTimeField(db_column='First_Intimation_Date', blank=True, null=True)  # Field name made lowercase.
+    inlias_id = models.CharField(db_column='Inlias_ID', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    insured_name = models.CharField(db_column='INSURED_NAME', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    updated_treatment_type = models.CharField(db_column='UPDATED_TREATMENT_TYPE', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    age_band_rev = models.CharField(db_column='AGE_BAND_REV', max_length=20, blank=True, null=True)  # Field name made lowercase.
+    state_of_treatment = models.CharField(db_column='STATE_OF_TREATMENT', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    qtr_of_treatment = models.CharField(db_column='QTR_OF_TREATMENT', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    yr_of_treatment = models.CharField(db_column='YR_OF_TREATMENT', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    month_of_treatment = models.CharField(db_column='MONTH_OF_TREATMENT', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    new_disease_category = models.CharField(db_column='NEW_DISEASE_CATEGORY', max_length=1000, blank=True, null=True)  # Field name made lowercase.
+    los = models.IntegerField(db_column='LOS', blank=True, null=True)  # Field name made lowercase.
+    month_name = models.CharField(db_column='MONTH_NAME', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    year1 = models.CharField(db_column='YEAR1', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    sla_report_year = models.CharField(db_column='SLA_REPORT_YEAR', max_length=20, blank=True, null=True)  # Field name made lowercase.
+    ccn_lt = models.CharField(db_column='CCN_LT', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    is_reconsidered_conca_ref = models.CharField(db_column='IS_RECONSIDERED_CONCA_REF', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    is_it_reconsidered = models.CharField(db_column='IS_IT_RECONSIDERED', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    covid_non_covid = models.CharField(db_column='COVID_NON_COVID', max_length=20, blank=True, null=True)  # Field name made lowercase.
+    claim_type = models.CharField(db_column='CLAIM_TYPE', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    consider_count = models.IntegerField(db_column='CONSIDER_COUNT', blank=True, null=True)  # Field name made lowercase.
+    settlement_date = models.DateTimeField(db_column='SETTLEMENT_DATE', blank=True, null=True)  # Field name made lowercase.
+    jsm = models.DateTimeField(db_column='JSM', blank=True, null=True)  # Field name made lowercase.
+    jem = models.DateTimeField(db_column='JEM', blank=True, null=True)  # Field name made lowercase.
+    ro_code_updated = models.CharField(db_column='RO_Code_Updated', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    sla_heading_updated = models.CharField(db_column='SLA_HEADING_UPDATED', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    month_no = models.CharField(db_column='MONTH_NO', max_length=5, blank=True, null=True)  # Field name made lowercase.
+    concat_plan_type = models.CharField(db_column='Concat_Plan_Type', max_length=500, blank=True, null=True)  # Field name made lowercase.
+    report_plan = models.CharField(db_column='Report_Plan', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    actual_lodge_amt = models.IntegerField(db_column='Actual_Lodge_Amt', blank=True, null=True)  # Field name made lowercase.
+    ipd_opd = models.CharField(db_column='IPD_OPD', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    lodge_amount_count = models.IntegerField(db_column='Lodge_Amount_Count', blank=True, null=True)  # Field name made lowercase.
+    end_to_end_tat = models.IntegerField(db_column='End to End TAT', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    adr_send_date = models.DateTimeField(db_column='ADR_Send_Date', blank=True, null=True)  # Field name made lowercase.
+    adr_recd_date = models.DateTimeField(db_column='ADR_Recd_Date', blank=True, null=True)  # Field name made lowercase.
+    file_closure_dates = models.DateTimeField(db_column='File_Closure_Dates', blank=True, null=True)  # Field name made lowercase.
+    last_document_received_date = models.DateTimeField(db_column='Last_Document_Received_Date', blank=True, null=True)  # Field name made lowercase.
+    actual_tat = models.IntegerField(db_column='Actual_TAT', blank=True, null=True)  # Field name made lowercase.
+    final_processing_tat_settlment_tat = models.IntegerField(db_column='Final_Processing_TAT / Settlment_TAT', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    claim_lodge_date_doa = models.IntegerField(db_column='Claim Lodge Date - DOA', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    claim_document_received_date_dod = models.IntegerField(db_column='Claim Document Received Date - DOD', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    adr_raise_date_lodge_date = models.IntegerField(db_column='ADR Raise Date - Lodge Date', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    adr_recive_adr_raise_date = models.IntegerField(db_column='ADR Recive - ADR Raise Date', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    claim_lodge_date_dod = models.IntegerField(db_column='Claim Lodge Date - DOD', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    broker_name = models.CharField(db_column='Broker_Name', max_length=250, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'CL_CRS_DET2'
+
+ClCrsDet2.objects = ClCrsDet2.objects.using('sla')
+
+
+
+class ClOutDet2(models.Model):
+    sla_no = models.DecimalField(db_column='SLA_NO', max_digits=18, decimal_places=0, blank=True, null=True)  # Field name made lowercase.
+    sla_heading = models.CharField(db_column='SLA_HEADING', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    ic_name = models.CharField(db_column='IC_NAME', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    pol_type = models.CharField(db_column='POL_TYPE', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    ro_code = models.CharField(db_column='RO_CODE', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    ro_name = models.CharField(db_column='RO_NAME', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    from_date = models.DateTimeField(db_column='FROM_DATE', blank=True, null=True)  # Field name made lowercase.
+    to_date = models.DateTimeField(db_column='TO_DATE', blank=True, null=True)  # Field name made lowercase.
+    uo_code = models.CharField(db_column='UO_CODE', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    uo_name = models.CharField(db_column='UO_NAME', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    pol_no = models.CharField(db_column='POL_NO', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    dev = models.CharField(db_column='Dev', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    age = models.DecimalField(db_column='Age', max_digits=18, decimal_places=0, blank=True, null=True)  # Field name made lowercase.
+    ageband = models.CharField(db_column='AgeBand', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    sex = models.CharField(db_column='Sex', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    sumins = models.DecimalField(db_column='SumIns', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    cbamt = models.DecimalField(db_column='CBAmt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    ins_name = models.CharField(db_column='INS_NAME', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    mdid = models.CharField(db_column='MDID', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    ccn = models.CharField(db_column='CCN', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    ip_name = models.CharField(db_column='IP_NAME', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    hosp_name = models.CharField(db_column='HOSP_NAME', max_length=500, blank=True, null=True)  # Field name made lowercase.
+    hosp_reg_no = models.CharField(db_column='HOSP_REG_NO', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    diagnosis = models.CharField(db_column='DIAGNOSIS', max_length=500, blank=True, null=True)  # Field name made lowercase.
+    icd_code = models.CharField(db_column='ICD_CODE', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    doa = models.DateTimeField(db_column='DOA', blank=True, null=True)  # Field name made lowercase.
+    dod = models.DateTimeField(db_column='DOD', blank=True, null=True)  # Field name made lowercase.
+    os_amount = models.DecimalField(max_digits=19, decimal_places=4, blank=True, null=True)
+    head = models.CharField(db_column='Head', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    cl_remarks = models.CharField(db_column='CL_REMARKS', max_length=8000, blank=True, null=True)  # Field name made lowercase.
+    user_name = models.CharField(db_column='USER_NAME', max_length=25, blank=True, null=True)  # Field name made lowercase.
+    lodgetype = models.CharField(db_column='LodgeType', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    lodgedate = models.DateTimeField(db_column='LodgeDate', blank=True, null=True)  # Field name made lowercase.
+    bsi = models.DecimalField(db_column='BSI', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    lodge_less_bsi = models.DecimalField(db_column='Lodge_Less_BSI', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    hosp_city = models.CharField(db_column='Hosp_City', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    extra = models.CharField(db_column='Extra', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    actuallodgeamt = models.DecimalField(db_column='ActualLodgeamt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    actuallosstype = models.CharField(db_column='ActualLossType', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    adrremark = models.CharField(db_column='ADRRemark', max_length=8000, blank=True, null=True)  # Field name made lowercase.
+    diseasecategory = models.CharField(db_column='DiseaseCategory', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    lodgeamountband = models.CharField(db_column='LodgeAmountBand', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    treatmenttype = models.CharField(db_column='TreatmentType', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    policystartdate = models.DateTimeField(db_column='PolicyStartDate', blank=True, null=True)  # Field name made lowercase.
+    policyenddate = models.DateTimeField(db_column='PolicyEndDate', blank=True, null=True)  # Field name made lowercase.
+    tpacode = models.CharField(db_column='TPACode', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    brcddor = models.DateTimeField(db_column='BRCDDOR', blank=True, null=True)  # Field name made lowercase.
+    hocddor = models.DateTimeField(db_column='HOCDDOR', blank=True, null=True)  # Field name made lowercase.
+    servicingbranch = models.CharField(db_column='ServicingBranch', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    bsi1 = models.DecimalField(db_column='BSI1', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    liablityamt = models.DecimalField(db_column='LiablityAmt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    empname = models.CharField(db_column='EmpName', max_length=150, blank=True, null=True)  # Field name made lowercase.
+    empcode = models.CharField(db_column='EmpCode', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    relation = models.CharField(db_column='Relation', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    clienttype = models.CharField(max_length=50, blank=True, null=True)
+    bufferamount = models.DecimalField(db_column='BufferAmount', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    invdone = models.CharField(db_column='InvDone', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    opinion = models.CharField(db_column='Opinion', max_length=500, blank=True, null=True)  # Field name made lowercase.
+    inv_remark = models.CharField(db_column='Inv_Remark', max_length=1000, blank=True, null=True)  # Field name made lowercase.
+    hosp_pin = models.CharField(db_column='Hosp_Pin', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    tac_tran_id = models.CharField(db_column='TAC_Tran_ID', max_length=25, blank=True, null=True)  # Field name made lowercase.
+    sec_treat = models.CharField(db_column='Sec_Treat', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    cappingliability = models.DecimalField(db_column='CappingLiability', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    prs_date = models.DateTimeField(db_column='PRS_Date', blank=True, null=True)  # Field name made lowercase.
+    icr_plan_type = models.CharField(db_column='ICR_Plan_Type', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    recordid = models.IntegerField(db_column='Recordid')  # Field name made lowercase.
+    consider_in_icr_unique_count = models.IntegerField(db_column='Consider_In_ICR_Unique_Count', blank=True, null=True)  # Field name made lowercase.
+    policy_plan_type = models.CharField(db_column='Policy_Plan_Type', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    policy_sub_type = models.CharField(db_column='Policy_Sub_Type', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    policy_scheme_type = models.CharField(db_column='Policy_Scheme_Type', max_length=250, blank=True, null=True)  # Field name made lowercase.
+    first_intimation_date = models.DateTimeField(db_column='First_Intimation_Date', blank=True, null=True)  # Field name made lowercase.
+    pcsprocedure_1 = models.CharField(db_column='PCSProcedure_1', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    pcsprocedure_2 = models.CharField(db_column='PCSProcedure_2', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    pcsprocedure_3 = models.CharField(db_column='PCSProcedure_3', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    inlias_id = models.CharField(db_column='Inlias_ID', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    insured_name = models.CharField(db_column='INSURED_NAME', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    updated_treatment_type = models.CharField(db_column='UPDATED_TREATMENT_TYPE', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    age_band_rev = models.CharField(db_column='AGE_BAND_REV', max_length=20, blank=True, null=True)  # Field name made lowercase.
+    state_of_treatment = models.CharField(db_column='STATE_OF_TREATMENT', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    qtr_of_treatment = models.CharField(db_column='QTR_OF_TREATMENT', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    yr_of_treatment = models.CharField(db_column='YR_OF_TREATMENT', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    month_of_treatment = models.CharField(db_column='MONTH_OF_TREATMENT', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    new_disease_category = models.CharField(db_column='NEW_DISEASE_CATEGORY', max_length=1000, blank=True, null=True)  # Field name made lowercase.
+    los = models.IntegerField(db_column='LOS', blank=True, null=True)  # Field name made lowercase.
+    month_name = models.CharField(db_column='MONTH_NAME', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    year1 = models.CharField(db_column='YEAR1', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    sla_report_year = models.CharField(db_column='SLA_REPORT_YEAR', max_length=20, blank=True, null=True)  # Field name made lowercase.
+    ccn_lt = models.CharField(db_column='CCN_LT', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    is_reconsidered_conca_ref = models.CharField(db_column='IS_RECONSIDERED_CONCA_REF', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    status = models.CharField(db_column='Status', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    is_it_reconsidered = models.CharField(db_column='IS_IT_RECONSIDERED', max_length=30, blank=True, null=True)  # Field name made lowercase.
+    covid_non_covid = models.CharField(db_column='COVID_NON_COVID', max_length=20, blank=True, null=True)  # Field name made lowercase.
+    claim_type = models.CharField(db_column='CLAIM_TYPE', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    consider_count = models.IntegerField(db_column='CONSIDER_COUNT', blank=True, null=True)  # Field name made lowercase.
+    jsm = models.DateTimeField(db_column='JSM', blank=True, null=True)  # Field name made lowercase.
+    jem = models.DateTimeField(db_column='JEM', blank=True, null=True)  # Field name made lowercase.
+    settlement_date = models.DateTimeField(db_column='SETTLEMENT_DATE', blank=True, null=True)  # Field name made lowercase.
+    ro_code_updated = models.CharField(db_column='RO_Code_Updated', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    month_no = models.CharField(db_column='MONTH_NO', max_length=5, blank=True, null=True)  # Field name made lowercase.
+    sla_heading_updated = models.CharField(db_column='SLA_HEADING_UPDATED', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    out_ccn = models.CharField(db_column='OUT_CCN', max_length=500, blank=True, null=True)  # Field name made lowercase.
+    concat_plan_type = models.CharField(db_column='Concat_Plan_Type', max_length=500, blank=True, null=True)  # Field name made lowercase.
+    report_plan = models.CharField(db_column='Report_Plan', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    actual_lodge_amt = models.DecimalField(db_column='Actual_Lodge_Amt', max_digits=19, decimal_places=4, blank=True, null=True)  # Field name made lowercase.
+    ipd_opd = models.CharField(db_column='IPD_OPD', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    lodge_amount_count = models.IntegerField(db_column='Lodge_Amount_Count', blank=True, null=True)  # Field name made lowercase.
+    fb_appointment_booking = models.IntegerField(db_column='FB_Appointment_Booking', blank=True, null=True)  # Field name made lowercase.
+    fb_time_by_doctor = models.IntegerField(db_column='FB_Time_By_Doctor', blank=True, null=True)  # Field name made lowercase.
+    fb_staff_professionalism = models.IntegerField(db_column='FB_Staff_Professionalism', blank=True, null=True)  # Field name made lowercase.
+    fb_hospital_hygiene = models.IntegerField(db_column='FB_Hospital_Hygiene', blank=True, null=True)  # Field name made lowercase.
+    fb_medical_care = models.IntegerField(db_column='FB_Medical_Care', blank=True, null=True)  # Field name made lowercase.
+    fb_pre_auth_process = models.IntegerField(db_column='FB_Pre_Auth_Process', blank=True, null=True)  # Field name made lowercase.
+    fb_discharge_process = models.IntegerField(db_column='FB_Discharge_Process', blank=True, null=True)  # Field name made lowercase.
+    feedback_date = models.DateTimeField(db_column='Feedback_Date', blank=True, null=True)  # Field name made lowercase.
+    end_to_end_tat = models.IntegerField(db_column='End to End TAT', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    adr_send_date = models.DateTimeField(db_column='ADR_Send_Date', blank=True, null=True)  # Field name made lowercase.
+    adr_recd_date = models.DateTimeField(db_column='ADR_Recd_Date', blank=True, null=True)  # Field name made lowercase.
+    file_closure_dates = models.DateTimeField(db_column='File_Closure_Dates', blank=True, null=True)  # Field name made lowercase.
+    last_document_received_date = models.DateTimeField(db_column='Last_Document_Received_Date', blank=True, null=True)  # Field name made lowercase.
+    actual_tat = models.IntegerField(db_column='Actual_TAT', blank=True, null=True)  # Field name made lowercase.
+    final_processing_tat_settlment_tat = models.IntegerField(db_column='Final_Processing_TAT / Settlment_TAT', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    claim_lodge_date_doa = models.IntegerField(db_column='Claim Lodge Date - DOA', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    claim_document_received_date_dod = models.IntegerField(db_column='Claim Document Received Date - DOD', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    adr_raise_date_lodge_date = models.IntegerField(db_column='ADR Raise Date - Lodge Date', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    adr_recive_adr_raise_date = models.IntegerField(db_column='ADR Recive - ADR Raise Date', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    claim_lodge_date_dod = models.IntegerField(db_column='Claim Lodge Date - DOD', blank=True, null=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+    broker_name = models.CharField(db_column='Broker_Name', max_length=250, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'CL_OUT_DET2'
+
+ClOutDet2.objects = ClOutDet2.objects.using('sla')
